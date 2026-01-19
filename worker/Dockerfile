@@ -10,7 +10,7 @@ RUN ["mvn", "verify"]
 COPY ["src/main", "/code/src/main"]
 RUN ["mvn", "package"]
 
-FROM openjdk:8-jre-alpine
+FROM FROM eclipse-temurin:8-jre
 
 COPY --from=build /code/target/worker-jar-with-dependencies.jar /
 
